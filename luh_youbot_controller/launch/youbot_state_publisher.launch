@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="youBotHasBase" default="true"/>
+	<arg name="youBotHasBase" default="false"/>
 	<arg name="youBotHasArm" default="true"/>	
 
 	<group if="$(arg youBotHasBase)" >

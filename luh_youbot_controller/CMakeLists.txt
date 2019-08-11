@@ -109,7 +109,7 @@ if (${JENKINS})
 else()
     add_custom_command(TARGET controller_node POST_BUILD
         #COMMAND sudo setcap cap_net_raw+ep controller_node
-        COMMAND gksudo setcap cap_net_raw+ep controller_node
+        COMMAND sudo setcap cap_net_raw+ep controller_node
         WORKING_DIRECTORY ${EXECUTABLE_PATH}
     )
     message("PRODUCTION BUILD - EXECUTING  sudo setcap cap_net_raw+ep controller_node")

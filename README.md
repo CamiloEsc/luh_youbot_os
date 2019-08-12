@@ -32,5 +32,47 @@ luh_youbot_poses          | This package contains some predefined poses and a li
 luh_youbot_vrep_api       | This is a fake driver API that sends commands to v-rep simulation.
 youbot_driver             | A catkinized version of the youbot driver (https://github.com/youbot/youbot_driver).
 
+For this controller, you need ROS Kinetic with Ubuntu 16.04
 
+You need to install additional libraries and programs.
+Install control-toolbox:
+
+    sudo apt-get install ros-kinetic-control-toolbox
+
+Install nlopt:
+
+    sudo apt-get install ros-kinetic-nlopt
+
+	sudo apt-get install libnlopt-dev
+
+Create and initialize catkin workspace (i. e. youbot):
+
+    mkdir -p ~/youbot/src
+    cd ~/youbot/src
+    catkin_init_workspace
+    cd ..
+    catkin_make
+
+Clone the youBot GUI sources to /src folder:
+    
+    cd ~/youbot/src
+    git clone https://github.com/CamiloEsc/luh_youbot_os.git
+
+Add the repository folder to the ROS_PACKAGE_PATH environment variable.
+
+Compile the youbot GUI by typing:
+
+    cd ~/youbot
+    catkin_make
+
+Usage
+------------
+
+The youBot GUI give you  graphical user interface app to communicate with youBot arm via youbot_driver. You can move youBot arm with joints or in the global coordinate system.
+
+To run youbot_gui you need to follow this commands:
+
+    cd ~/youbot
+    source devel/setup.bash
+    rosrun luh_youbot_gui luh_youbot_gui
 
